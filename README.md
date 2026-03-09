@@ -49,9 +49,11 @@ Make sure Python **3.9+** is installed.
 ```bash
 pip install ultralytics opencv-python torch torchvision easyocr transformers pillow
 ```
+```bash
 pip uninstall opencv-python-headless
 pip uninstall opencv-python
 pip install opencv-python
+```
 ---
 
 # Required Model
