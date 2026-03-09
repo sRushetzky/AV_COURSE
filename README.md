@@ -1,40 +1,28 @@
 # Traffic Sign Detection System
 
 ## Overview
-This project implements a **Traffic Sign Detection and Classification system** designed for autonomous driving environments.
+This project implements a **Traffic Sign Detection and Classification system** for autonomous driving environments.
 
-The system detects traffic signs and road objects from:
+The system can detect traffic signs and road objects from:
 
 - Images
 - Videos
-- Live camera feed
+- Live camera
 
-It combines **YOLO object detection**, **traffic sign classification**, and **OCR** to recognize speed limit signs and other traffic signs.
+It combines **YOLOv8 object detection**, **traffic sign classification**, and **OCR** to identify speed limit signs and other road signs.
 
-The output includes:
+Detected objects are displayed with:
 
-- Bounding boxes around detected objects
-- Classification labels
+- Bounding boxes
+- Labels
 - Confidence scores
-- Warning messages for important signs
+- Warning messages
 
-Detected results are automatically saved to disk.
-
----
-
-# Features
-
-✔ Detect traffic signs in images  
-✔ Detect traffic signs in videos  
-✔ Real-time detection from camera  
-✔ Speed limit recognition using OCR  
-✔ Object detection (cars, pedestrians, bicycles, etc.)  
-✔ Pause / Resume video processing  
-✔ Automatic saving of detection results  
+All results are automatically saved.
 
 ---
 
-# Technologies Used
+# Technologies
 
 - Python
 - OpenCV
@@ -52,3 +40,94 @@ Detected results are automatically saved to disk.
 ```bash
 git clone https://github.com/YOUR_USERNAME/traffic-sign-detection.git
 cd traffic-sign-detection
+```
+
+## 2. Install dependencies
+
+Make sure Python **3.9+** is installed.
+
+```bash
+pip install ultralytics opencv-python torch torchvision easyocr transformers pillow
+```
+
+---
+
+# Required Model
+
+Place the traffic sign detection model in:
+
+```
+models/traffic_signs.pt
+```
+
+The YOLO model (`yolov8n.pt`) will download automatically on first run.
+
+---
+
+# Project Structure
+
+```
+traffic-sign-detection
+│
+├── main.py
+├── models
+│   └── traffic_signs.pt
+│
+├── inputs
+│   ├── images
+│   └── videos
+│
+├── outputs
+│   ├── images
+│   └── videos
+│
+└── README.md
+```
+
+---
+
+# Running the Project
+
+Run the program:
+
+```bash
+python main.py
+```
+
+Menu:
+
+```
+1 - Image detection
+2 - Video detection
+3 - Camera detection
+0 - Exit
+```
+
+---
+
+# Controls (Video Mode)
+
+| Key | Action |
+|-----|------|
+| P | Pause / Resume |
+| Q | Exit |
+| ESC | Exit |
+
+---
+
+# Output
+
+Detection results are automatically saved to:
+
+```
+outputs/images
+outputs/videos
+```
+
+Each detection includes a bounding box, label, and confidence score.
+
+---
+
+# Author
+
+Developed as part of a **Software Development for Autonomous Vehicles course project**.
